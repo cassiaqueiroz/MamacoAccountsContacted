@@ -5,7 +5,7 @@
     <lightning:datatable data="{!v.Accounts}" Columns="{!v.columns}"
                          keyField="Id" hideCheckboxColumn="false"/>
     <lightning:card iconName="standard:account"
-                    title="Accounts Contacted">
+                    title="Contacted Accounts">
         <div class="slds-p-arround_medium">
             <!--For to access information-->
             <aura:iteration items="{!v.accs}" var="accounts">      
