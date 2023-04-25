@@ -1,0 +1,23 @@
+<aura:component controller="ListAccount" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global">
+    <aura:attribute name="accs" type="Account[]" />
+    <!-- When use helper? -->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <lightning:datatable data="{!v.Accounts}" Columns="{!v.columns}"
+                         keyField="Id" hideCheckboxColumn="false"/>
+    <lightning:card iconName="standard:account"
+                    title="Accounts Contacted">
+        <div class="slds-p-arround_medium">
+            <!--For to access information-->
+            <aura:iteration items="{!v.accs}" var="accounts">      
+                <!--For-->
+                <p>__________________________________</p> 
+                <p>{!accounts.Name}</p>
+                <p>{!accounts.Rating}</p>
+                <p>{!accounts.StageName__c}</p>
+                
+            </aura:iteration>
+        </div><br/>
+        
+    </lightning:card>
+    
+</aura:component>
